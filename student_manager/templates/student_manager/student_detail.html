@@ -1,0 +1,15 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'student_manager/style.css' %}"><!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ student.name }}</title>
+    <link rel="stylesheet" href="{% static 'student_manager/style.css' %}">
+</head>
+<body>
+    <h1>{{ student.name }}</h1>
+    <p><strong>Email:</strong> {{ student.email }}</p>
+    <p><strong>Enrolled on:</strong> {{ student.enrollment_date }}</p>
+    <a href="{% url 'student_manager:student_list' %}" class="back-link">Back to list</a>
+</body>
+</html>
