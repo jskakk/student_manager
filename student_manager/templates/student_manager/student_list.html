@@ -1,0 +1,23 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'student_manager/style.css' %}"><!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>All Students</title>
+    <link rel="stylesheet" href="{% static 'student_manager/style.css' %}">
+</head>
+<body>
+    <h1>All Students</h1>
+    <ul>
+        {% for student in students %}
+            <li>
+                <a href="{% url 'student_manager:student_detail' student.id %}">
+                    {{ student.name }}
+                </a>
+            </li>
+        {% empty %}
+            <li>No students found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
